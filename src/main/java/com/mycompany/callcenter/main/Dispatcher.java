@@ -6,6 +6,9 @@
 package com.mycompany.callcenter.main;
 
 import com.mycompany.callcenter.Object.ClientCall;
+import com.mycompany.callcenter.Object.Employee;
+import java.util.Collections;
+import java.util.List;
 
 /**
  *
@@ -13,15 +16,17 @@ import com.mycompany.callcenter.Object.ClientCall;
  */
 public class Dispatcher implements Runnable{
 
-    public Dispatcher(Integer numberEmployee)
+    List<String> listEmployees = null;
+    
+    public Dispatcher(List<Employee> listEmployees)
     {
-        
+        Collections.synchronizedList(listEmployees);
     }
     
     
-    public synchronized void dispatch(ClientCall clientCall) 
+    public synchronized void dispatchCall() 
     {
-       System.out.println("Incoming call duration"+clientCall.getDurationCall());
+      
        
     }
     
