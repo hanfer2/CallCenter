@@ -12,6 +12,8 @@ package com.mycompany.callcenter.constants;
 public class Constants {
     
     
-    public Integer minDurationCalls = 5;
-    public Integer maxDurationCalls = 10;
+    public static final Integer minDurationCalls = 5;
+    public static final Integer maxDurationCalls = 10;
+    
+    public static final Integer numberThread =10;
 }
