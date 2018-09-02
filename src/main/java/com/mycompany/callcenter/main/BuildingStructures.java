@@ -5,6 +5,7 @@
  */
 package com.mycompany.callcenter.main;
 
+import com.mycompany.callcenter.Enum.FreeEmployee;
 import com.mycompany.callcenter.Enum.TypeEmployee;
 import com.mycompany.callcenter.Object.ClientCall;
 import com.mycompany.callcenter.Object.Employee;
@@ -26,27 +27,21 @@ public class BuildingStructures {
 
 
   
-   public static List<Employee> listEmployees(Integer numberOperators, Integer numberSupervisor, Integer numberDirector)
+   public static List<Employee> listEmployees(Integer numberOperators, TypeEmployee type)
    {
      
-    fillEmployee(numberOperators, TypeEmployee.OPERATOR);
-    fillEmployee(numberSupervisor, TypeEmployee.SUPERVISOR);
-    fillEmployee(numberDirector, TypeEmployee.DIRECTOR);
-     
-      return listEmployees;
-   }
-   
-   public static void fillEmployee(Integer number, TypeEmployee type)
-   {
-      int i=0;
+        int i=0;
         Employee employee = null;
-       while(i< number )
+       while(i< numberOperators )
       {
         employee = new Employee();
-        employee.setType( TypeEmployee.OPERATOR);
+        employee.setType( type);
+        employee.setFreeEmployee(FreeEmployee.free);
         listEmployees.add(employee);
         i++;
       }
+     
+      return listEmployees;
    }
    
    
